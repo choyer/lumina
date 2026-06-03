@@ -1,14 +1,15 @@
-# lumina
+# Lumina
 
-My personal self-hosted solar powered SBC webserver serving up carl.hoyer.ca
+My personal self-hosted solar powered SBC webserver serving up carl.hoyer.ca. Inspired by [Low Tech Magazine](https://solar.lowtechmagazine.com/) and their [solar powered webserver](https://solar.lowtechmagazine.com/about/the-solar-website/).
 
 ## Details
 
-1. [/server](/server/) `...... (Server Hardware)`
-2. [/ansible](/ansible/) `..... (Ansible Setup)`
-3. [/httpd2](/httpd2/) `...... (httpd2 webserver)`
-4. [/solar](/solar/) `....... (Solarolar Setup)`
-5. [/sunburst](/sunburst/) `.... (Solar controller stats -> webserver)`
-6. [/raycast](/raycast/) `..... (Power stats -> website)`
+[**/server**](/server/) `.......... (Server Hardware)`
+[**/ansible**](/ansible/) `......... (Ansible Setup)`
+[**/httpd2**](/httpd2/) `.......... (httpd2 webserver)`
+[**/solar**](/solar/) `........... (Solar Setup)`
+[**/sunburst**](/sunburst/) `........ (Solar controller stats -> webserver)`
+[**/raycast**](/raycast/) `......... (Power stats -> website)`
 
-## [TODO](/TODO.md)
+
+### -> [TODO](/TODO.md)
