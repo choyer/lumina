@@ -12,9 +12,12 @@ My personal self-hosted solar powered SBC webserver serving up carl.hoyer.ca. In
 
 [**/solar**](/solar/) `........... (Solar Setup)`
 
-[**/sunburst**](/sunburst/) `........ (Solar controller stats -> webserver)`
+[**/sunburst**](/sunburst/) `....... (Solar controller stats -> webserver)`
 
 [**/raycast**](/raycast/) `......... (Power stats -> website)`
 
+[**/embodiment**](/embodiment/) `...... (Physical embodiment & installation)`
+
+---
 
 ### :spiral_notepad: [TODO](/TODO.md)
