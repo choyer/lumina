@@ -1,5 +1,14 @@
 # Server Hardware ( Olimex A20-OLinuXino-LIME2-e16Gs16M )
-The server is an extremely low powered SBC from Olimex featuring the following specs:
+The server is the extremely low powered [A20-OLinuXino-LIME2-e16Gs16M SBC from Olimex](https://www.olimex.com/Products/OLinuXino/A20/A20-OLinuXino-LIME2/open-source-hardware). 
+
+It is OSHW certified open source hardware and runs open source software.
+
+[**User Manual**](https://www.olimex.com/Products/OLinuXino/A20/A20-OLinuXino-LIME2/resources/A20-OLinuXino-LIME2-UM.pdf)
+[**Olimage Linux Guide**](https://github.com/OLIMEX/OLINUXINO/blob/master/DOCUMENTS/OLIMAGE/Olimage-guide.pdf) (I am NOT using Olimage Linux. Just for Ref)
+[**Schematics & Hardware Source**](https://github.com/OLIMEX/OLINUXINO/tree/master/HARDWARE/A20-OLinuXino-LIME2)
+[**Board Dimensions**](https://www.olimex.com/Products/OLinuXino/A10/_resources/Ax0-OLINUXINO-LIME-dimensions.png)
+
+The Hardware running the server features the following specs:
 
 ```
 - Allwinner A20/T2 dual core Cortex-A7 processor, each core typically running at 1GHz and dual-core Mali 400 GPU
