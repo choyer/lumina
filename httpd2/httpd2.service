@@ -1,0 +1,13 @@
+# /etc/systemd/system/httpd2.service
+[Unit]
+Description=httpd2
+After=network.target
+
+[Service]
+EnvironmentFile=-/etc/default/httpd2
+ExecStart=/usr/local/bin/httpd2 $HTTPD2_OPTS
+KillMode=process
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
