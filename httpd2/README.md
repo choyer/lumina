@@ -39,6 +39,8 @@ Install the ARM GNU C cross-compiler linker:
 
 ## Building (--target armv7-unknown-linux-gnueabihf)
 
+### Using A20-OLinuXino-LIME2 Running Armbian Debian 13 (Trixie) Minimal
+
 > [!NOTE]
 > Attempts were made to build to the `--target armv7-unknown-linux-gnueabihf` on a non-arm computer, however none were successful (though I didn't try very hard to solve `rustls` compile errors).
 
@@ -62,6 +64,16 @@ linker = "arm-linux-gnueabihf-gcc"
 
 > [!WARNING]
 > Initial httpd2 compile time on the A20-OLinuXino-LIME2 can take upwards of **70 minutes!**
+
+### Using ArchLinux
+
+Installing `arm-linux-gnueabihf-gcc` via `AUR` is insanity leading to 11GB of space disappearing.
+
+[This comment](https://aur.archlinux.org/packages/arm-linux-gnueabihf-gcc#comment-1049418) lists a workaround, but I didn't spend the time to try it.
+
+### Using Mac OS (Apple Silicon)
+
+Installing `arm-linux-gnueabihf-gcc` also seems to be a pain.
 
 ## Pre-compiled armv7-unknown-linux-gnueabihf Binaries
 
