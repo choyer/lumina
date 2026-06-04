@@ -1,6 +1,6 @@
 # httpd2
 
-[Cliff Biffle's](https://cliffle.com/) [httpd2](https://codeberg.org/cliffle/httpd2) is a "modern static file server" making it simple, secure and low resource usage making it perfect for its use on a solar powered webserver.
+[Cliff Biffle's](https://cliffle.com/) [httpd2](https://codeberg.org/cliffle/httpd2) is a "modern static file server" with the philosophy of being simple, secure and low resource usage which makes it perfect for its use on a solar powered webserver.
 
 It is fashioned after [djb](https://cr.yp.to/) `publicfile`. A comparison between `httpd2` vs `publicfile` can be [found here](https://codeberg.org/cliffle/httpd2/src/branch/main/doc/vs.md).
 
@@ -19,10 +19,10 @@ sudo apt update && sudo apt upgrade -y
 sudo apt install curl build-essential pkg-config libssl-dev vim git -y
 ```
 
-Install Rust via `rustup`:
+Install Rust via `rustup`:  
 `curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh`
 
-Apply environment variable for terminal to recognize Rust commands in bash:
+Apply environment variable for terminal to recognize Rust commands in bash:  
 `source "$HOME/.cargo/env"`
 
 Verify sucessful install:
@@ -31,10 +31,10 @@ rustc --version
 cargo --version
 ```
 
-Add 32-bit ARM hardware-float target to Rust toolchain (not really necessary since we are already running this architecture on the native host and it should add it when installing via `rustup`):
+Add 32-bit ARM hardware-float target to Rust toolchain (not really necessary since we are already running this architecture on the native host and it should add it when installing via `rustup`):  
 `rustup target add armv7-unknown-linux-gnueabihf`
 
-Install the ARM GNU C cross-compiler linker:
+Install the ARM GNU C cross-compiler linker:  
 `sudo apt-get install gcc-arm-linux-gnueabihf`
 
 ## Building (--target armv7-unknown-linux-gnueabihf)
