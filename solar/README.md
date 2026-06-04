@@ -1,0 +1,3 @@
+# Solar Hardware Setup
+
+WIP
