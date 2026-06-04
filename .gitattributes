@@ -1,0 +1,1 @@
+httpd2/bin/* filter=lfs diff=lfs merge=lfs -text
