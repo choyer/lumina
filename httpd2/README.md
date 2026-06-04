@@ -54,10 +54,10 @@ Append to `Config.toml` to map the target to installed linker:
 linker = "arm-linux-gnueabihf-gcc"
 ```
 
-**Standard Build (fully static program with NO system dependencies)**:
+**Standard Build (fully static program with NO system dependencies)**:  
 `cargo build --target=armv7-unknown-linux-gnueabihf --release`
 
-**`journald` Support Build** (Config.toml includes journald feature, might do this by default):
+**`journald` Support Build** (Config.toml includes journald feature, might do this by default):  
 `PKG_CONFIG_ALLOW_CROSS=1 cargo build --release --features journald --target=armv7-unknown-linux-gnueabihf`
 
 > [!WARNING]
@@ -77,8 +77,8 @@ TBD
 
 As per the [httpd2 manual](https://codeberg.org/cliffle/httpd2/src/branch/main/doc/manual.md):
 
-**Run in Development**:
-`cargo run path_to_web_pages`
+**Run in Development**:  
+`cargo run path_to_web_pages`  
 `path_to_web_pages` is a path (absolute or relative) to web pages to serve. Server defaults to port `8000`.
 
 **Minimal secure configuration example**:
