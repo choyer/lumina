@@ -61,7 +61,14 @@ linker = "arm-linux-gnueabihf-gcc"
 `PKG_CONFIG_ALLOW_CROSS=1 cargo build --release --features journald --target=armv7-unknown-linux-gnueabihf`
 
 > [!WARNING]
-> Initial httpd2 compile time on the A20-OLinuXino-LIME2 can take upwards of **70 minutes**
+> Initial httpd2 compile time on the A20-OLinuXino-LIME2 can take upwards of **70 minutes!**
+
+## Pre-compiled armv7-unknown-linux-gnueabihf Binaries
+
+Found in the [**/bin** directory](bin/)
+
+> [!NOTE]
+> `/bin` contains binaries stored on **Git LFS**. See [git-lfs.com](https://git-lfs.com/) & [GitHub Installing LFS](https://docs.github.com/en/repositories/working-with-files/managing-large-files/installing-git-large-file-storage).
 
 ## Deploying
 TBD
