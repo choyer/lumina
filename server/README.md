@@ -11,6 +11,7 @@ It is OSHW certified open source hardware and runs open source software.
 The Hardware running the server features the following specs:
 
 ```
+- A20-OLinuXino-LIME2-e16Gs16M Rev. L
 - Allwinner A20/T2 dual core Cortex-A7 processor, each core typically running at 1GHz and dual-core Mali 400 GPU
 - 1GB DDR3 RAM memory
 - 16GB eMMC flash memory option (in A20-OLinuXino-LIME2-e4GB or A20-OLinuXino-LIME2-e16GB)
