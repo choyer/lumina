@@ -1,0 +1,32 @@
+// ©crh 5 June 2026
+
+// Disable HDMI and internal video pipelines on the Allwinner A20 
+// via the following overlay file.
+
+// HowTo:
+//  Compile this file into a binary device-tree block (.dtb) via:
+//    dtc -I dts -O dtb -o disable-hdmi.dtb disable-hdmi.dts
+//
+//  Move the compiled overlay to the user-overlay directory:
+//    sudo mv disable-hdmi.dtb /boot/overlay-user/
+//
+//  Modify Armbian environment parameters:
+//    sudo nano /boot/armbianEnv.txt
+//
+//  Locate or add the 'user_overlays' property line, then save the file:
+//    user_overlays=disable-hdmi
+
+/dts-v1/;
+/plugin/;
+
+&hdmi {
+    status = "disabled";
+};
+
+&hdmi_sound {
+    status = "disabled";
+};
+
+&display_clocks {
+    status = "disabled";
+};

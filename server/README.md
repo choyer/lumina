@@ -37,7 +37,50 @@ The Hardware running the server features the following specs:
 - PCB dimensions: (84 x 60)mm ~ (3.3 x 2.4)"
 ```
 
-# OS ( Armbian Trixie Minimal )
+## OS ( Armbian Trixie Minimal )
 Initial [Armbian](https://armbian.com/boards/lime2) installation was [Debian 13 Trixie Minimal(CLI)](https://dl.armbian.com/lime2/Trixie_current_minimal) running the **6.18.29** kernel.
 
 OS has been installed and is running on the 16GB eMMC device for max reliability and low power cosumption.
+
+## Maximum Power Saving Config
+
+### Disable HDMI
+
+Disabling HDMI can see an estimated savings of **~0.15W - 0.4W (~30 mA - 80 mA)**.
+
+To disable see the [/server/config/disable-hdmi.dts] file and follow these steps:
+
+1. Compile this file into a binary device-tree block (.dtb) via:  
+`dtc -I dts -O dtb -o disable-hdmi.dtb disable-hdmi.dts`
+
+2. Move the compiled overlay to the user-overlay directory:  
+`sudo mv disable-hdmi.dtb /boot/overlay-user/`
+
+3. Modify Armbian environment parameters:  
+`sudo nano /boot/armbianEnv.txt`
+
+4. Locate or add the 'user_overlays' property line, then save the file:  
+`user_overlays=disable-hdmi`
+
+> [!CAUTION]
+> Disabling video will limit you from locally debugging via HDMI should something happen to your headless setup,
+> leaving you with the last resort of using UART to debug.
+
+### Disable USB ports
+
+Disabling the 2 USB ports can see an estimated savings of **~0.05W - 0.20W (~10 mA - 40 mA)**.
+
+To disable see [/server/config/power-save-usb.sh](/server/config/power-save-usb.sh) and follow these steps:
+
+1. Make the `power-save-usb.sh` script executable via:  
+`sudo chmod +x /usr/local/bin/power-save-usb.sh`
+
+2. Add script as cron boot event:  
+`sudo crontab -e`
+
+3. Append the following text:  
+`@reboot /usr/local/bin/power-save-usb.sh`
+
+> [!CAUTION]
+> Disabling usb port will prevent you from locally debugging via usb keyboard should something happen to your headless setup,
+> leaving you with the last resort of using UART to debug.
