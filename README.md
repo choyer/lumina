@@ -7,21 +7,21 @@ My personal self-hosted solar powered SBC webserver serving up carl.hoyer.ca. In
 
 ---
 
-### [**/server**](/server/) `.......... (Server hardware)`
+### :computer: [**/server**](/server/) `.......... (Server hardware)`
 
-### [**/ansible**](/ansible/) `......... (Ansible system configuration)`
+### :clipboard: [**/ansible**](/ansible/) `......... (Ansible system configuration)`
 
-### [**/httpd2**](/httpd2/) `.......... (httpd2 webserver)`
+### :pager: [**/httpd2**](/httpd2/) `.......... (httpd2 webserver)`
 
-### [**/static**](/static/) `.......... (static content details)`
+### :anchor: [**/static**](/static/) `.......... (static content details)`
 
-### [**/solar**](/solar/) `........... (Solar setup)`
+### :sunny: [**/solar**](/solar/) `........... (Solar setup)`
 
-### [**/sunburst**](/sunburst/) `....... (Solar controller stats -> webserver)`
+### :sunrise: [**/sunburst**](/sunburst/) `....... (Solar controller stats -> webserver)`
 
-### [**/raycast**](/raycast/) `......... (Power stats -> website)`
+### :high_brightness: [**/raycast**](/raycast/) `......... (Power stats -> website)`
 
-### [**/embodiment**](/embodiment/) `..... (Physical embodiment & installation)`
+### :hammer: [**/embodiment**](/embodiment/) `..... (Physical embodiment & installation)`
 
 ---
 
