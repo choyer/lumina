@@ -101,6 +101,8 @@ In the event of being unable to reach the A20-OLinuXino-LIME2 via network OR loc
 
 The board pinout for the UART0 header is:
 
+| PIN | WIRE COLOUR |
+| --- | ----------- |
 | TX0 | :green_square: GREEN |
 | RX0 | :red_square: RED |
 | GND | :blue_square: BLUE |
