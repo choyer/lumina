@@ -11,7 +11,7 @@ My personal self-hosted solar powered SBC webserver serving up carl.hoyer.ca. In
 
 ### :clipboard: [**/ansible**](/ansible/) `......... (Ansible system configuration)`
 
-### :pager: [**/httpd2**](/httpd2/) `.......... (httpd2 webserver)`
+### :globe_with_meridians: [**/httpd2**](/httpd2/) `.......... (httpd2 webserver)`
 
 ### :anchor: [**/static**](/static/) `.......... (static content details)`
 
