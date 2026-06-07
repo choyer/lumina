@@ -84,3 +84,11 @@ To disable see [/server/config/power-save-usb.sh](/server/config/power-save-usb.
 > [!CAUTION]
 > Disabling usb port will prevent you from locally debugging via usb keyboard should something happen to your headless setup,
 > leaving you with the last resort of using UART to debug.
+
+### Disable Green LED
+
+It is possible to disable the LED1 (**GREEN**). Doing so can see an estimated savings of ~0.05W (~10 mA).
+
+It NOT possible to disable the PWR_LED (RED) as it is hardwired to the DC barrel jack.
+
+I am not currently providing any scripts to achieve this. 
