@@ -87,8 +87,28 @@ To disable see [/server/config/power-save-usb.sh](/server/config/power-save-usb.
 
 ### Disable Green LED
 
-It is possible to disable the LED1 (**GREEN**). Doing so can see an estimated savings of ~0.05W (~10 mA).
+It is possible to disable the LED1 (**GREEN** :green_circle:). Doing so can see an estimated savings of ~0.05W (~10 mA).
 
-It NOT possible to disable the PWR_LED (RED) as it is hardwired to the DC barrel jack.
+It NOT possible to disable the PWR_LED (**RED** :red_circle:) as it is hardwired to the DC barrel jack.
 
-I am not currently providing any scripts to achieve this. 
+I am not currently providing any scripts to achieve this.
+
+## Troubleshooting
+
+### UART0
+
+In the event of being unable to reach the A20-OLinuXino-LIME2 via network OR locally via HDMI (due to power savings disable), it is possible to locally connect to the board using it's UART0 Serial header pins.
+
+The board pinout for the UART0 header is:
+
+| TX0 | :green_square: GREEN |
+| RX0 | :red_square: RED |
+| GND | :blue_square: BLUE |
+
+Using Olimex [USB-Serial-F (Part Number: 9000043175)](https://www.olimex.com/Products/USB-Modules/Interfaces/USB-SERIAL-F/) cable or any FTDI cable will work.
+
+Using [tio](https://github.com/tio/tio) as the terminal emulator program is a good choice.
+
+To connect simply run:  
+`tio /dev/ttyUSB0`  
+Note: your device may vary!
