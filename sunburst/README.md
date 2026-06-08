@@ -17,6 +17,7 @@ Further Investigation:
 [Rover (Wanderer?) RS232 Port/DIY Cable](https://solarthing.readthedocs.io/en/latest/quickstart/serial-port/hardware/rover/rs232-port.html)  
 [github.com/rosswarren/renogymodbus <python>](https://github.com/rosswarren/renogymodbus)  
 [tokio-modbus <rust library>](https://github.com/slowtec/tokio-modbus)  
+[SolarShed <python>](https://github.com/BarkinSpider/SolarShed/blob/master/RenogyWanderer.py)  
 
 ### Victron Devices
 
