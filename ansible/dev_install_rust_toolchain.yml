@@ -1,0 +1,74 @@
+---
+- name: Install Rust Tool Chain on Armbian
+  hosts: dev
+  become: true
+  vars:
+    # Define the user who will own the Rust installation
+    rust_user: "{{ ansible_user | default(ansible_facts['user_id']) }}"
+
+  tasks:
+    - name: Install required system dependencies
+      ansible.builtin.apt:
+        name:
+          - curl
+          - build-essential
+          - pkg-config
+          - libssl-dev
+
+    - name: Install RustUp
+      ansible.builtin.shell: |
+        set -o pipefail
+        curl https://sh.rustup.rs -sSf | sh -s -- -y
+      args:
+        creates: "/home/{{ rust_user }}/.cargo/bin/rustup"
+        executable: /bin/bash
+      environment:
+        RUSTUP_HOME: "/home/{{ rust_user }}/.rustup"
+        CARGO_HOME: "/home/{{ rust_user }}/.cargo"
+
+    - name: Add Cargo binaries to user shell path
+      ansible.builtin.lineinfile:
+        path: "/home/{{ rust_user }}/.bashrc"
+        line: 'export PATH="$HOME/.cargo/bin:$PATH"'
+        state: present
+        create: true
+        mode: "0644"
+      become_user: "{{ rust_user }}"
+
+    - name: Check rustc version
+      ansible.builtin.command:
+        cmd: "/home/{{ rust_user }}/.cargo/bin/rustc --version"
+      become_user: "{{ rust_user }}"
+      register: rustc_output
+      changed_when: false
+
+    - name: Check cargo version
+      ansible.builtin.command:
+        cmd: "/home/{{ rust_user }}/.cargo/bin/cargo --version"
+      become_user: "{{ rust_user }}"
+      register: cargo_output
+      changed_when: false
+
+    - name: Print Rust and Cargo versions
+      ansible.builtin.debug:
+        msg:
+          - "Rust Version: {{ rustc_output.stdout }}"
+          - "Cargo Version: {{ cargo_output.stdout }}"
+
+    - name: Install Rust Target --armv7-unknown-linux-gnueabihf
+      ansible.builtin.command:
+        cmd: "/home/{{ rust_user }}/.cargo/bin/rustup target add armv7-unknown-linux-gnueabihf"
+      become_user: "{{ rust_user }}"
+      register: rustup_target_output
+      changed_when: false
+
+    - name: Print target add output
+      ansible.builtin.debug:
+        msg: "{{ rustup_target_output.stderr }}"
+
+    - name: Install required development tools
+      ansible.builtin.apt:
+        name:
+          - git
+          - vim
+          - gcc-arm-linux-gnueabihf

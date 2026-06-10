@@ -11,6 +11,13 @@ It is fashioned after [djb](https://cr.yp.to/) `publicfile`. A comparison betwee
 
 A spare A20-OLinuXino-LIME2 running the same OS as the server is used as development machine. 
 
+### Option 1: Using Ansible Playbook
+
+[dev_install_rust_toolchain.yml](/ansible/dev_install_rust_toolchain.yml) can be run via:  
+`ansible-playbook -i inventory dev_install_rust_toolchain.yml --ask-become-pass`
+
+### Option 2: Manually
+
 On Armbian Debian 13 (Trixie) Minimal:
 
 Install the necessary build dependencies for Rust and dev tools:
