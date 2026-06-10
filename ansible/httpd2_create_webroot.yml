@@ -1,0 +1,31 @@
+---
+- name: Create new webroot folder based on user input
+  hosts: dev
+  gather_facts: false
+  become: true
+
+  vars_prompt:
+    - name: folder_name
+      prompt: "Enter the name of the folder you want to create (e.g. 0 / 1 / 2 / ...)"
+      private: false
+
+  tasks:
+    - name: Create the directory
+      ansible.builtin.file:
+        path: "/var/public/file/{{ folder_name }}"
+        state: directory
+        recurse: true
+        owner: root
+        group: root
+        mode: "0755"
+      register: folder_output
+
+    - name: Report if the folder already existed
+      ansible.builtin.debug:
+        msg: "Folder already exists at: {{ folder_output.path }}"
+      when: not folder_output.changed # 👈 Runs ONLY if nothing was changed
+
+    - name: Report if the folder was newly created
+      ansible.builtin.debug:
+        msg: "New folder successfully created at: {{ folder_output.path }}"
+      when: folder_output.changed # 👈 Runs ONLY if a new folder was built

@@ -1,0 +1,23 @@
+---
+- name: Clone or pull httpd2 from Official Git Repo
+  hosts: dev
+  become: true
+
+  tasks:
+    - name: Fetching httpd2 from official git repo
+      ansible.builtin.git:
+        repo: "https://codeberg.org/cliffle/httpd2.git"
+        dest: /opt/httpd2
+        version: main
+        clone: yes
+        update: yes
+      register: git_result
+
+    - name: Print git change status
+      ansible.builtin.debug:
+        msg: "The repository was updated! Changed status: {{ git_result.changed }}"
+
+    - name: Show detailed git message if already present
+      ansible.builtin.debug:
+        msg: "Repo was already up to date."
+      when: not git_result.changed
