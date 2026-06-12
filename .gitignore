@@ -1,2 +1,5 @@
 # ignore ansible inventory file
 /ansible/inventory
+
+# ignore local logs
+/logs
